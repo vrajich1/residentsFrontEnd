@@ -10,7 +10,7 @@ function Residents() {
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [idState, setId] = useState('');
 
-  const fetchResidents = () => fetch('http://localhost:5000')
+  const fetchResidents = () => fetch('https://polar-brushlands-14095.herokuapp.com/')
   .then(response => response.json())
   .then(residentsList => setResidents(residentsList))
 
@@ -33,7 +33,7 @@ function Residents() {
     const update = JSON.stringify({ name, age, dateOfBirth })
     console.log('Update:', update)
     console.log('ID:', idState)
-    await fetch("http://localhost:5000/" + idState, {
+    await fetch("https://polar-brushlands-14095.herokuapp.com/" + idState, {
       method: "PUT",
       body: update,
       headers: {
@@ -46,7 +46,7 @@ function Residents() {
   }
 
   const handleDelete = async (id) => {
-    await fetch('http://localhost:5000/' + id, {
+    await fetch('https://polar-brushlands-14095.herokuapp.com/' + id, {
       method: "DELETE"
     })
     fetchResidents()

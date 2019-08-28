@@ -9,7 +9,7 @@ function Add() {
  const handleSubmit = async (e) =>{
     e.preventDefault()
     const data = JSON.stringify({name, age, dateOfBirth})
-    let result = await fetch("http://localhost:5000",{
+    let result = await fetch("https://polar-brushlands-14095.herokuapp.com/",{
       method:"POST",
       body:data,
       headers:{
